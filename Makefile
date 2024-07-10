@@ -29,11 +29,11 @@ hf-login:
 	huggingface-cli login --token $(HF_TOKEN) --add-to-git-credential
 
 push-hub:
-	huggingface-cli upload quangtn266/Drug-Classification ./App --repo-type=space --commit-message="Sync App files"
-	huggingface-cli upload quangtn266/Drug-Classification ./model /model --repo-type=space --commit-message="Sync model"
-	huggingface-cli upload quangtn266/Drug-Classification ./results /metrics --repo-type=space --commit-message="Sync model"
-	huggingface-cli upload quangtn266/Drug-Classification ./utils /utils --repo-type=space --commit-message="Sync model"
-	huggingface-cli upload quangtn266/Drug-Classification ./requirements.txt /requirements.txt --repo-type=space --commit-message="Sync requirements"
+	huggingface-cli upload quangtn266/Drug-Classification ./App App --repo-type=space --commit-message="Sync App files"
+	huggingface-cli upload quangtn266/Drug-Classification ./model model --repo-type=space --commit-message="Sync model"
+	huggingface-cli upload quangtn266/Drug-Classification ./results metrics --repo-type=space --commit-message="Sync model"
+	huggingface-cli upload quangtn266/Drug-Classification ./utils utils --repo-type=space --commit-message="Sync model"
+	huggingface-cli upload quangtn266/Drug-Classification ./requirements.txt requirements.txt --repo-type=space --commit-message="Sync requirements"
 
 deploy: hf-login push-hub
 
