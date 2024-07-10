@@ -20,5 +20,5 @@ jobs:
 
       - name: Deployment to HuggingFace
         env:
-          HF_TOKEN: ${{ env.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: make deploy HF=$HF_TOKEN
