@@ -25,13 +25,9 @@ jobs:
       - name: Evaluation
         env:
           REPO_TOKEN : '${{ secrets.TOKEN }}'
-        run: echo $REPO_TOKEN  
-        #run: make eval
+        run: make eval
       - name: Update Branch
         env:
           NAME : '${{ secrets.USER_NAME }}'
           EMAIL : '${{ secrets.USER_EMAIL }}'
-        run: |
-            echo $NAME 
-            echo $EMAIL
-        #run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
+        run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
