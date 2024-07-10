@@ -63,4 +63,9 @@ with open("./results/metrics.txt", "w") as outfile:
     outfile.write(f"\nAccuracy={round(accuracy, 2)}, F1_score = {round(f1, 2)}")
 
 # Save the model
-sio.dump(pipe, "./model/drug_pipeline.skops")
+import pickle
+# save the model to disk
+filename = './model/drug_pipeline.sav'
+pickle.dump(pipe, open(filename, 'wb'))
+
+#sio.dump(pipe, "./model/drug_pipeline.skops")
