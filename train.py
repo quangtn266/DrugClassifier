@@ -17,7 +17,9 @@ from sklearn.model_selection import train_test_split
 X = drug_df.drop("Drug", axis=1).values
 y = drug_df.Drug.values
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=125)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=125
+)
 
 # Pipeline
 cat_col = [1, 2, 3]
@@ -32,7 +34,7 @@ transform = ColumnTransformer(
 )
 
 pipe = Pipeline(
-    steps = [
+    steps=[
         ("preprocessing", transform),
         ("model", RandomForestClassifier(n_estimators=10, random_state=125)),
     ]
@@ -46,7 +48,7 @@ predictions = pipe.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 f1 = f1_score(y_test, predictions, average="macro")
 
-print("Accuracy: ", str(round(accuracy, 2)*100)+"%","F1: ", round(f1, 2))
+print("Accuracy: ", str(round(accuracy, 2) * 100) + "%", "F1: ", round(f1, 2))
 
 # Confusion matrix
 import matplotlib.pyplot as plt
@@ -64,8 +66,9 @@ with open("./results/metrics.txt", "w") as outfile:
 
 # Save the model
 import pickle
-# save the model to disk
-filename = './model/drug_pipeline.sav'
-pickle.dump(pipe, open(filename, 'wb'))
 
-#sio.dump(pipe, "./model/drug_pipeline.skops")
+# save the model to disk
+filename = "./model/drug_pipeline.sav"
+pickle.dump(pipe, open(filename, "wb"))
+
+# sio.dump(pipe, "./model/drug_pipeline.skops")
