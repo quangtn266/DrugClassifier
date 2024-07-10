@@ -19,8 +19,6 @@ eval:
 update-branch:
 	git config --global user.name $(USER_NAME)
 	git config --global user.email $(USER_EMAIL)
-	#git config user.name "${{ github.actor }}"
-	#git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
 	git commit -am "Update with new results"
 	git push --force origin HEAD:update
 
@@ -32,7 +30,7 @@ hf-login:
 
 push-hub:
 	huggingface-cli upload quangtn266/Drug-Classification ./app.py --repo-type=space --commit-message="Sync App files"
-	huggingface-cli updload quangtn266/Drug-Classification ./model /model --repo-type=space --commit-message="Sync model"
+	huggingface-cli upload quangtn266/Drug-Classification ./model /model --repo-type=space --commit-message="Sync model"
 	huggingface-cli upload quangtn266/Drug-Classification ./results /metrics --repo-type=space --commit-message="Sync model"
 
 deploy: hf-login push-hub
