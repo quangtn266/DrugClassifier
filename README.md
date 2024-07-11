@@ -9,4 +9,4 @@ app_file: app.py
 pinned: false
 ---
 
-Check out the configuration reference at https://huggingface.co/spaces/quangtn266/Drug-Classification
+Check out the app at https://huggingface.co/spaces/quangtn266/Drug-Classification
