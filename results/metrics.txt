@@ -1,2 +1,2 @@
 
-Accuracy=0.92, F1_score = 0.83
+Accuracy=0.97, F1_score = 0.95
