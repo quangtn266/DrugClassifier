@@ -8,21 +8,6 @@ on:
 
   workflow_dispatch:
 
-#jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: iterative/setup-cml@v2
-#        with:
-#          version: 'v0.20.0'
-#          vega: false
-
- #     - name: Deployment to HuggingFace
- #       env:
- #         HF_TOKEN: ${{ secrets.HF_TOKEN }}
- #       run: make deploy HF=$HF_TOKEN
-
 jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
